@@ -1,0 +1,14 @@
+model User {
+    id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    name       String    @db.VarChar(50)
+    email      String    @db.VarChar(50)
+    password   String    @db.VarChar(250)
+    role_id    String    @db.Uuid
+    role       Role      @relation(fields: [role_id], references: [id])
+    deleted_at DateTime?
+    created_at DateTime  @default(now())
+    updated_at DateTime  @updatedAt
+
+    @@index([id])
+    @@map("user")
+}

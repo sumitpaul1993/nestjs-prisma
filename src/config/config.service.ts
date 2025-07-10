@@ -17,4 +17,8 @@ export class AppConfigService {
   get databaseUrl(): EnvConfig['DATABASE_URL'] {
     return this.configService.get<EnvConfig['DATABASE_URL']>('DATABASE_URL', '');
   }
+
+  get bcryptSalt(): EnvConfig['BCRYPT_SALT'] {
+    return this.configService.get<EnvConfig['BCRYPT_SALT']>('BCRYPT_SALT', 10);
+  }
 }

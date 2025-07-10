@@ -3,6 +3,7 @@ model Role {
   name       String    @db.VarChar(20)
   slug       String    @db.VarChar(20)
   deleted_at DateTime?
+  users      User[]
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
 

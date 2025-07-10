@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client'
+import { createAdminUser } from './data/adminUser.seed';
 import { MenuPermissionSeed } from './data/menuPermission.seed';
 import { RoleSeed } from './data/role.seed';
 
@@ -26,7 +27,7 @@ async function main() {
                     },
                 })
                 d.permission.map(
-                    async (c:any) => {
+                    async (c: any) => {
                         c.menu_id = menuInsert.id
                         await prisma.permission.create({
                             data: c
@@ -36,6 +37,9 @@ async function main() {
             }
         )
     );
+
+    // admin user seed
+    await createAdminUser()
 }
 
 

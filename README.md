@@ -2,6 +2,13 @@
 - This repository is a example of module base architecture
 - Currently we are using 2 env [local: for local development & deployment, stag: for stag or dev server development & deployment]
 
+# Acceptance Criteria
+- By running seed files system will create role, menu, permission and one admin user
+- You cannot create another admin user
+- you can register as editor and viewer
+- editor and viewer role permission will be manage by admin only
+- by default admin don't have any permission set because admin can do everything
+
 <br>
 
 # Prerequisite

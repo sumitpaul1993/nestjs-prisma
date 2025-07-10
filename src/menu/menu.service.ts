@@ -1,4 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { BcryptService } from 'src/common/service/bcrypt.service';
 import { DeleteFilterService } from 'src/common/service/deleteFilter.service';
 import { DatabaseService } from 'src/database/database.service';
 import { IGetAllMenuDataRo } from './interface/menu.interface';
@@ -7,7 +8,8 @@ import { IGetAllMenuDataRo } from './interface/menu.interface';
 export class MenuService {
     constructor(
         private readonly prisma: DatabaseService,
-        private readonly deleteFilterService: DeleteFilterService
+        private readonly deleteFilterService: DeleteFilterService,
+        // private readonly bcryptService: BcryptService,
     ) { }
 
     /**
@@ -15,6 +17,10 @@ export class MenuService {
     */
     async getMenuPermissions():Promise<IGetAllMenuDataRo[]> {
         let menus:IGetAllMenuDataRo[]
+        
+        // let hash = await this.bcryptService.hashPassword("Sumit2025", 10)
+        // console.log(hash) //$2b$10$4q1Lf2VrioFbaVeSk8P/2e4wPHe1U8e6/q9SzEYEQA1yzu7HZREru
+        // console.log(await this.bcryptService.comparePassword("Sumit2025", hash))
 
         try {
             menus = await this.prisma.menu.findMany({
