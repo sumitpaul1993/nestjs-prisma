@@ -4,5 +4,5 @@ export const validationSchema = Joi.object({
   APP_ENV: Joi.string().valid('local', 'staging').default('local'),
   APP_PORT: Joi.number().default(3000),
   DATABASE_URL: Joi.string().required(),
-  BCRYPT_SALT: Joi.string().required(),
+  JWT_SECRET: Joi.string().required(),
 });

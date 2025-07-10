@@ -18,7 +18,8 @@ export class AppConfigService {
     return this.configService.get<EnvConfig['DATABASE_URL']>('DATABASE_URL', '');
   }
 
-  get bcryptSalt(): EnvConfig['BCRYPT_SALT'] {
-    return this.configService.get<EnvConfig['BCRYPT_SALT']>('BCRYPT_SALT', 10);
+  get JWTSecret(): EnvConfig['JWT_SECRET'] {
+    return this.configService.get<EnvConfig['JWT_SECRET']>('JWT_SECRET', "test");
   }
+
 }

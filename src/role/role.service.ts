@@ -34,9 +34,7 @@ export class RoleService {
                 statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
                 message: 'internal_error',
                 error: e,
-            },
-                HttpStatus.INTERNAL_SERVER_ERROR
-            );
+            }, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
         return roles;

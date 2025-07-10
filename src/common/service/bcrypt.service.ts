@@ -5,16 +5,14 @@ import { AppConfigService } from 'src/config/config.service';
 @Injectable()
 export class BcryptService {
     constructor(
-        @Inject()
-        private readonly appConfigService: AppConfigService,
     ) { }
 
     /**
      * Hash password
     */
-    async hashPassword(password: string, saltNumber: number): Promise<string> {
+    async hashPassword(password: string): Promise<string> {
         return new Promise(async (resolve, reject) => {
-            const salt = await bcrypt.genSalt(saltNumber);
+            const salt = await bcrypt.genSalt(10);
             bcrypt.hash(password, salt, function (err: any, hash: string) {
                 if (err) reject(err);
                 resolve(hash);
