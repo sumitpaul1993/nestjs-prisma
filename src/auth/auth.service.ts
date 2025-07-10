@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { BcryptService } from 'src/common/service/bcrypt.service';
-import { DeleteFilterService } from 'src/common/service/deleteFilter.service';
-import { JWTService } from 'src/common/service/jwt.service';
+import { BcryptService } from 'src/common/module/bcrypt.service';
+import { DeleteFilterService } from 'src/common/module/deleteFilter.service';
+import { JWTService } from 'src/common/module/jwt.service';
 import { AppConfigService } from 'src/config/config.service';
 import { DatabaseService } from 'src/database/database.service';
 import { RoleConstants } from 'src/role/constants/role.constants';

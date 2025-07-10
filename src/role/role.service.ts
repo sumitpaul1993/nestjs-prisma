@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { DeleteFilterService } from 'src/common/service/deleteFilter.service';
+import { DeleteFilterService } from 'src/common/module/deleteFilter.service';
 import { DatabaseService } from 'src/database/database.service';
 import { IGetAllRoleDataRo } from './interface/role.interface';
 

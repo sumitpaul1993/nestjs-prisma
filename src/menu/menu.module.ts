@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { DeleteFilterService } from 'src/common/service/deleteFilter.service';
+import { DeleteFilterService } from 'src/common/module/deleteFilter.service';
 import { DatabaseModule } from 'src/database/database.module';
 import { MenuController } from './menu.controller';
 import { MenuService } from './menu.service';

@@ -24,4 +24,19 @@ export class JWTService {
             });
         });
     }
+
+    /**
+     * create JWT token
+    */
+    async verifyToken(
+        token: string,
+        secretKey: string,
+    ): Promise<{id:string}> {
+        return new Promise(async (resolve, reject) => {
+            JWT.verify(token, secretKey, (err, data) => {
+                if (err) reject(err);
+                resolve(data);
+            });
+        });
+    }
 }

@@ -42,7 +42,16 @@ async function bootstrap() {
       .setTitle("NestJs & Prisma")
       .setDescription("")
       .setVersion("1")
-      // .addBearerAuth() // for bearer token
+      .addBearerAuth(
+        // {
+        //   type: 'http',
+        //   scheme: 'bearer',
+        //   bearerFormat: 'JWT',
+        //   name: 'Authorization',
+        //   in: 'header',
+        // },
+        // 'access-token'
+      ) // for bearer token
       .build();
     const customOptions: SwaggerCustomOptions = {
       swaggerOptions: {
@@ -61,7 +70,7 @@ async function bootstrap() {
       customOptions,
     );
   }
-  
+
   app.useGlobalPipes(new CustomValidationPipe())
   app.useGlobalPipes(new TrimPipe());
 
