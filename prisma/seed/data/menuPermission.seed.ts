@@ -22,5 +22,15 @@ export const MenuPermissionSeed = [
                 slug: MenuPermissionConstants.document.permissions.destroy.slug
             }
         ]
+    },
+    {
+        name: MenuPermissionConstants.role.menuName,
+        slug: MenuPermissionConstants.role.menuSlug,
+        permission: [
+            {
+                name: MenuPermissionConstants.role.permissions.updatePermission.name,
+                slug: MenuPermissionConstants.role.permissions.updatePermission.slug
+            },
+        ]
     }
 ]

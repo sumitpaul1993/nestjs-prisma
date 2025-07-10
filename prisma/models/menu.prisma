@@ -1,11 +1,13 @@
 model Menu {
-    id         String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-    name       String       @db.VarChar(20)
-    slug       String       @db.VarChar(20)
-    deleted_at DateTime?
-    permission Permission[]
-    created_at DateTime     @default(now())
-    updated_at DateTime     @updatedAt
+    id              String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    name            String           @db.VarChar(20)
+    slug            String           @db.VarChar(20)
+    deleted_at      DateTime?
+    permission      Permission[]
+    menu_role       RoleMenu[]
+    menu_permission RolePermission[]
+    created_at      DateTime         @default(now())
+    updated_at      DateTime         @updatedAt
 
     @@index([id])
     @@map("menu")

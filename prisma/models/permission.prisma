@@ -1,12 +1,13 @@
 model Permission {
-    id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-    name       String    @db.VarChar(20)
-    slug       String    @db.VarChar(20)
-    menu_id    String    @db.Uuid
-    menu       Menu      @relation(fields: [menu_id], references: [id])
-    deleted_at DateTime?
-    created_at DateTime  @default(now())
-    updated_at DateTime  @updatedAt
+    id              String           @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    name            String           @db.VarChar(20)
+    slug            String           @db.VarChar(20)
+    menu_id         String           @db.Uuid
+    menu            Menu             @relation(fields: [menu_id], references: [id])
+    permission_role RolePermission[]
+    deleted_at      DateTime?
+    created_at      DateTime         @default(now())
+    updated_at      DateTime         @updatedAt
 
     @@index([id])
     @@map("permission")

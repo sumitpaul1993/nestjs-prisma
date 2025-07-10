@@ -8,6 +8,13 @@ export const MenuPermissionConstants = {
             update: { name: "Update", slug: "update" },
             destroy: { name: "Destroy", slug: "destroy" }
         }
+    },
+    role: {
+        menuName: "Role",
+        menuSlug: "role",
+        permissions: {
+            updatePermission: { name: "Update Permission", slug: "update-permission" }
+        }
     }
 }
 

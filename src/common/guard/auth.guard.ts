@@ -33,8 +33,8 @@ export class AuthGuard implements CanActivate {
                 'unauthorized',
                 `${StatusCodesList.UnauthorizedAccess}`,
             );
-        }        
-        
+        }
+
         let decode
         try {
             decode = await this.jwtService.verifyToken(token, this.appConfigService.JWTSecret);
@@ -53,13 +53,29 @@ export class AuthGuard implements CanActivate {
                 where: this.deleteFilterService.filterDeleted({
                     id: decode.id
                 }),
-                select:{
+                select: {
                     id: true,
                     email: true,
-                    role:{
-                        select:{
+                    role: {
+                        select: {
                             id: true,
-                            slug:true
+                            slug: true,
+                            role_menu: {
+                                select: {
+                                    menu: {
+                                        select: {
+                                            slug: true,
+                                            menu_permission: {
+                                                select: {
+                                                    permission: {
+                                                        select: {slug: true}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -78,7 +94,7 @@ export class AuthGuard implements CanActivate {
                 'unauthorized',
                 `${StatusCodesList.UnauthorizedAccess}`,
             );
-        } 
+        }
 
         request.user = user;
         return true;

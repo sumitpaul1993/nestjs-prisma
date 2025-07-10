@@ -1,0 +1,12 @@
+model RoleMenu {
+    id         String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+    role_id    String    @db.Uuid
+    role       Role      @relation(fields: [role_id], references: [id])
+    menu_id    String    @db.Uuid
+    menu       Menu      @relation(fields: [menu_id], references: [id])
+    created_at DateTime  @default(now())
+    updated_at DateTime  @updatedAt
+
+    @@index([id])
+    @@map("role_menu")
+}
