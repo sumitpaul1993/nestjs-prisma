@@ -9,7 +9,7 @@ export class RoleController {
     ) { }
 
     @Get()
-    getAccreditation(
+    getRoles(
     ): Promise<IGetAllRoleDataRo[]> {
         return this.roleService.getRoles();
     }

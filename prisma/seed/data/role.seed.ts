@@ -1,14 +1,16 @@
+import { RoleConstants } from "../../../src/role/constants/role.constants";
+
 export const RoleSeed = [
     {
-        name: 'Admin',
-        slug: 'admin'
+        name: RoleConstants.admin.name,
+        slug: RoleConstants.admin.slug
     },
     {
-        name: 'Editor',
-        slug: 'editor'
+        name: RoleConstants.editor.name,
+        slug: RoleConstants.editor.slug
     },
     {
-        name: 'Viewer',
-        slug: 'viewer'
+        name: RoleConstants.viewer.name,
+        slug: RoleConstants.viewer.slug
     },
 ];
