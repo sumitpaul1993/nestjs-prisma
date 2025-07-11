@@ -10,9 +10,10 @@ import {
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { CustomValidationPipe } from './common/pipe/customValidation.pipe';
 import { TrimPipe } from './common/pipe/trim.pipe';
+import { join } from 'path';
+
 
 async function bootstrap() {
-  // const app = await NestFactory.create(AppModule);
   const app = await NestFactory.create<NestExpressApplication>(
     AppModule,
     {
@@ -22,6 +23,8 @@ async function bootstrap() {
   // Retrieve AppConfigService
   const appConfig = app.get(AppConfigService);
   app.useBodyParser('json', { limit: '10mb' });
+  app.setGlobalPrefix('api');
+  // app.useStaticAssets(join(__dirname, '..', 'upload'));
 
   const appEnv = appConfig.appEnv;
   const appPort = appConfig.appPort;

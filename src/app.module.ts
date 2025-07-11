@@ -9,17 +9,28 @@ import { MenuModule } from './menu/menu.module';
 import { CustomValidationPipe } from './common/pipe/customValidation.pipe';
 import { AuthModule } from './auth/auth.module';
 import { JWTService } from './common/module/jwt.service';
-import { AppConfigService } from './config/config.service';
 import { CommonModule } from './common/module/common.module';
+import { DocumentModule } from './document/document.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
   imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '..', 'public/upload'),
+      exclude: ['/api/{*test}'],
+      serveStaticOptions: {
+        fallthrough: false,
+      },
+      // serveRoot: '/upload/',
+    }),
     ConfigModule,
     DatabaseModule,
     CommonModule,
     AuthModule,
     RoleModule,
     MenuModule,
+    DocumentModule
   ],
   providers: [
     {
@@ -28,7 +39,7 @@ import { CommonModule } from './common/module/common.module';
     },
     AppService,
     JWTService,
-    
+
   ],
   controllers: [AppController],
 })

@@ -29,6 +29,8 @@ export class TrimPipe implements PipeTransform {
         // if (this.isObj(values) && type === 'body') {
         if (this.isObj(values)) {
             return this.trim(values)
+        }else {
+            return values
         }
         console.log('file: common/pipes/trim.pipe.ts')
         throw new BadRequestException('Validation failed')

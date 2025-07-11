@@ -28,7 +28,6 @@ export class RoleController {
     @ApiBearerAuth()
     @Put('/permission')
     editRolePermission(
-        @Req() request: any,
         @Body(ValidationPipe) editPermissionDto: EditPermissionDto,
     ) {
 
