@@ -22,7 +22,7 @@ import { join } from 'path';
       serveStaticOptions: {
         fallthrough: false,
       },
-      // serveRoot: '/upload/',
+      serveRoot: '/documents/',
     }),
     ConfigModule,
     DatabaseModule,

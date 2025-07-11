@@ -26,7 +26,7 @@ export class PermissionGuard implements CanActivate {
         const user = request.user;
 
         const permissionObject = this.reflector.get<string>('permissionObject', context.getHandler());
-        console.log(permissionObject)
+        console.log("permission-accessing: ",permissionObject)
 
         // console.log(user)
         if (user.role.slug != RoleConstants.admin.slug) {

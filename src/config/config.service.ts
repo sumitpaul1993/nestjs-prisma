@@ -22,4 +22,8 @@ export class AppConfigService {
     return this.configService.get<EnvConfig['JWT_SECRET']>('JWT_SECRET', "test");
   }
 
+  get documentBaseLink(): EnvConfig['DOCUMENT_BASE_LINK'] {
+    return this.configService.get<EnvConfig['DOCUMENT_BASE_LINK']>('DOCUMENT_BASE_LINK', "http://localhost:3000/");
+  }
+
 }
