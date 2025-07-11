@@ -60,7 +60,7 @@ async function bootstrap() {
       swaggerOptions: {
         persistAuthorization: true,
       },
-      customSiteTitle: "Lifeforce 2.1 Api Docs",
+      customSiteTitle: "Api Docs",
     };
     const document = SwaggerModule.createDocument(
       app,
