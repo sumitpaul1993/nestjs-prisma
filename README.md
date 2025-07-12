@@ -90,5 +90,10 @@
 
 <br>
 
+>## For Run Test
+- pnpm test:e2e
+
+<br>
+
 ## Swagger Doc Url
 - http://localhost:3000/api-docs
