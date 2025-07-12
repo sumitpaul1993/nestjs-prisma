@@ -95,5 +95,93 @@
 
 <br>
 
+# Test Cases
+
+### File Name: app.e2e-spec.ts
+```
+Route : / (GET)
+hello world test
+```
+
+```
+Route : /health (GET)
+application health check
+```
+
+```
+Route : /menu (GET)
+get menu list
+```
+
+<br>
+
+### File Name: auth.e2e-spec.ts
+```
+Route : /auth/login (POST) - [Login Error]
+check with wrong credentials
+```
+
+```
+Route : /auth/login (POST) - [Login Success]
+```
+
+```
+Route : /auth/register (POST) - [Register Error -> with existing email]
+try to register with existing email id 
+```
+
+```
+Route : /auth/register (POST) - [Register Error -> with admin role]
+try to register with admin role in our case we will not allow register as admin because admin user will created while running seeder
+```
+
+```
+Route : /auth/register (POST) - [Register success]
+```
+
+```
+Route : /auth/login (POST) - [Login Success with registered user]
+```
+
+<br>
+
+### File Name: role.e2e-spec.ts
+```
+Route : /role (GET)
+get all roles
+```
+
+```
+Route : /role/permission (PUT) [Error -> without authentication]
+trying to add permission without login
+```
+
+```
+Route : /role/permission (PUT) [Error -> without admin authentication]
+trying to add permission without admin login
+```
+
+```
+Route : /role/permission (PUT) [success]
+```
+<br>
+
+### File Name: document.e2e-spec.ts
+```
+Route : /document (POST)
+```
+
+```
+Route : /document (GET)
+```
+
+```
+Route : /document/:id (GET)
+```
+
+```
+Route : /document/:id (DELETE)
+```
+
 ## Swagger Doc Url
 - http://localhost:3000/api-docs

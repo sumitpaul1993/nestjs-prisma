@@ -212,9 +212,9 @@ describe('AuthController - Register and Login with that registered user (e2e)', 
   })
 
   /**
-   * check /auth/login (POST) - [Login Success]
+   * check /auth/login (POST) - [Login Success with registered user]
   */
-  it('/auth/login (POST) - [Login Success]', async () => {
+  it('/auth/login (POST) - [Login Success with registered user]', async () => {
     let { status, body } = await request(app.getHttpServer()).post(
       '/auth/login',
     ).send({
