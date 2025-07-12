@@ -23,7 +23,7 @@ async function bootstrap() {
   // Retrieve AppConfigService
   const appConfig = app.get(AppConfigService);
   app.useBodyParser('json', { limit: '10mb' });
-  app.setGlobalPrefix('api');
+  // app.setGlobalPrefix('api');
   // app.useStaticAssets(join(__dirname, '..', 'upload'));
 
   const appEnv = appConfig.appEnv;

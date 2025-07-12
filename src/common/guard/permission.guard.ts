@@ -26,14 +26,18 @@ export class PermissionGuard implements CanActivate {
         const user = request.user;
 
         const permissionObject = this.reflector.get<string>('permissionObject', context.getHandler());
-        console.log("permission-accessing: ",permissionObject)
+        // console.log("permission-accessing: ",permissionObject)
 
         // console.log(user)
         if (user.role.slug != RoleConstants.admin.slug) {
             // do permission checking
             let checkPermission = await this.checkPermission(permissionObject, user.role.role_menu)
             if(!checkPermission) {
-                throw new UnauthorizedException('Unauthrize.');
+                // throw new UnauthorizedException('Unauthrized');
+                throw new UnauthorizedException(
+                'forbidden',
+                `${StatusCodesList.Forbidden}`,
+            );
             }
             return true
         } else {
