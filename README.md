@@ -59,5 +59,36 @@
 
 <br>
 
+# Run Tests
+
+>## Execute Docker file to run postgres database (for linux- fedora/redhat/centos)
+- sudo systemctl start docker
+- docker-compose up -d 
+- create a new test db for my case am using apptdb_test (we don't need to mess with our original db)
+
+<br>
+
+>## For Install Packages
+- pnpm install 
+> or
+- pnpm i 
+
+<br>
+
+>## For Generate Prisma Entities
+- pnpm generate:test
+
+<br>
+
+>## For Run Migrations
+- pnpm migrate:test
+
+<br>
+
+>## For Run Seeders
+- pnpm seed:test
+
+<br>
+
 ## Swagger Doc Url
 - http://localhost:3000/api-docs
